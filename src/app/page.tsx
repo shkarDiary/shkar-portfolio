@@ -141,7 +141,7 @@ export default function Home() {
             loop
             muted
           /> */}
-          <video width="700" height="240" controls>
+          <video width="700" height="240" controls={false} autoPlay>
             <source src="/mosh.mp4" type="video/mp4" />
             Error Message
           </video>
