@@ -133,14 +133,18 @@ export default function Home() {
           <h2 className=" text-3xl mb-5 text-gray-800 ">
             My first website with html and css
           </h2>
-          <NextVideo
+          {/* <NextVideo
             src={mosh}
             className="max-w-[50vw] "
             autoPlay
             controls={false}
             loop
             muted
-          />
+          /> */}
+          <video width="700" height="240" controls>
+            <source src="/mosh.mp4" type="video/mp4" />
+            Error Message
+          </video>
         </div>
       </section>
     </main>
