@@ -1,72 +1,55 @@
-import Facebook from "@/../public/image/Facebook.png";
-import Instagram from "@/../public/image/Instagram.png";
-import MailLine from "@/../public/image/mailLine.png";
-import nextjs from "@/../public/image/nextjs.png";
-import python from "@/../public/image/Python-logo-notext.png";
-import sprinBoot from "@/../public/image/spring-boot-logo.png";
-import js from "@/../public/image/js.png";
-import react from "@/../public/image/React.png";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
-import NextVideo from "next-video";
-import mosh from "@/../videos/mosh.mp4";
-type Skills = {
-  name: string;
-  img: StaticImageData;
-  h: number;
-  w: number;
-}[];
-type IconName = {
-  name: string;
-  img: StaticImageData;
-  link: string;
-}[];
-//sd
+
 export default function Home() {
-  const skills: Skills = [
+  const skills = [
     {
       name: "react",
-      img: react,
+      img: "/image/React.png",
       h: 2300,
       w: 2000,
     },
     {
       name: "next",
-      img: nextjs,
+      img: "/image/nextjs.png",
       h: 1234,
       w: 2048,
     },
     {
       name: "springBoot",
-      img: sprinBoot,
+      img: "/image/spring-boot-logo.png",
       h: 315,
       w: 600,
     },
     {
       name: "python",
-      img: python,
+      img: "/image/Python-logo-notext.png",
       h: 2048,
       w: 1869,
     },
     {
       name: "js",
-      img: js,
+      img: "/image/js.png",
       h: 1080,
       w: 1080,
     },
   ];
-  const iconName: IconName = [
+  const iconName = [
     {
       name: "facebook",
-      img: Facebook,
+      img: "/image/Facebook.png",
       link: "https://www.facebook.com/shkar.deary",
     },
     {
       name: "instagram",
-      img: Instagram,
+      img: "/image/Instagram.png",
       link: "https://www.instagram.com/d4ro_diary/",
     },
-    { name: "mailLine", img: MailLine, link: "mailto:shkardeary4@gmail.com" },
+    {
+      name: "mailLine",
+      img: "/image/mailLine.png",
+      link: "mailto:shkardeary4@gmail.com",
+    },
   ];
   return (
     <main className="  ">
@@ -133,14 +116,6 @@ export default function Home() {
           <h2 className=" text-3xl mb-5 text-gray-800 ">
             My first website with html and css
           </h2>
-          {/* <NextVideo
-            src={mosh}
-            className="max-w-[50vw] "
-            autoPlay
-            controls={false}
-            loop
-            muted
-          /> */}
           <video width="700" height="240" controls={false} autoPlay>
             <source src="/mosh.mp4" type="video/mp4" />
             Error Message
