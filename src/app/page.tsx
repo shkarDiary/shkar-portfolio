@@ -1,3 +1,4 @@
+import Slider from "@/components/slider";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -53,8 +54,8 @@ export default function Home() {
   ];
   return (
     <main className="  ">
-      <span className=" w-[30%] h-full bg-primary-200 absolute right-0 top-0 -z-20"></span>
-      <section className="md:h-[calc(100%-8rem)]  md:w-[70%] w-screen h-full mt-16 ">
+      <span className=" w-[30%] h-full bg-primary-200 absolute right-0 top-0 -z-20" />
+      <section className="md:w-[70%]  w-screen md:h-[calc(100vh-12rem)] mt-16 ">
         <div className=" flex flex-col  justify-center items-center md:gap-4 gap-10 ">
           <div>
             <h3 className=" text-secondary-300 md:text-2xl text-lg ">
@@ -99,8 +100,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-8 pt-8 bg-white h-screen ">
-        <div className="flex  justify-evenly ">
+      <section className=" mt-28 relative ">
+        <div className="w-[30%] h-[40rem] bg-slate-100 absolute -top-52  -z-10 " />
+        <div className="flex  justify-evenly  ">
           {skills.map((skills) => (
             <Image
               className="w-14 h-10 md:w-32 md:h-auto object-contain"
@@ -112,15 +114,39 @@ export default function Home() {
             />
           ))}
         </div>
-        <div className=" flex flex-col justify-center items-center mt-8  ">
-          <h2 className=" text-3xl mb-5 text-gray-800 ">
-            My first website with html and css
-          </h2>
-          <video width="700" height="240" controls={false} autoPlay>
-            <source src="/mosh.mp4" type="video/mp4" />
-            Error Message
-          </video>
+        <div className="flex justify-center items-centers  my-28 ">
+          <div className=" w-[60%] grid grid-rows-1 grid-cols-2  place-items-center place-content-center ">
+            <video
+              className=" w-96  "
+              width="570"
+              height="699"
+              controls={false}
+              autoPlay
+            >
+              <source src="/mosh-new.mp4" type="video/mp4" />
+              Error Message
+            </video>
+            <div className="w-96 flex flex-col items-center gap-10 px-10  ">
+              <h1 className="text-4xl  font-bold  ">
+                My first project with HTML & CSS
+              </h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gravida
+                mollis sed. elit. Gravida pellentesque in eu, luctus mollis sed,
+                ipsum dolor sit amet consectetur adipiscing elit. Gravida mollis
+                sed. elit. Gravida pellentesque in eu, luctus mollis sed, ipsum
+                dolor sit amet consectetur adipiscing elit. Gravida mollis sed.
+                elit. Gravida pellentesque in eu, luctus mollis sed, ipsum dolor
+                sit amet
+              </p>
+              <div>hello</div>
+            </div>
+          </div>
         </div>
+      </section>
+      <section className="relative  ">
+        <span className=" w-[30%] h-[30rem] bg-primary-200 absolute right-0 top-0 -z-20" />
+        <Slider />
       </section>
     </main>
   );
