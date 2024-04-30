@@ -144,8 +144,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative  ">
-        <span className=" w-[30%] h-[30rem] bg-primary-200 absolute right-0 top-0 -z-20" />
+      <section className="relative px-10 flex flex-col gap-10 ">
+        <span className=" w-[30%] h-[38rem] bg-primary-200 absolute right-0 top-0 -z-20" />
+        <div>
+          <h3 className="text-3xl text-secondary-200 font-bold ">Project</h3>
+          <h1 className="text-5xl font-bold ">My latest graphics</h1>
+        </div>
         <Slider />
       </section>
     </main>
