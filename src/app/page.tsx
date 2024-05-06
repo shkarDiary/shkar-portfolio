@@ -114,20 +114,10 @@ export default function Home() {
             />
           ))}
         </div>
-        <div className="flex justify-center items-centers  my-28 ">
-          <div className=" w-[60%] grid grid-rows-1 grid-cols-2  place-items-center place-content-center ">
-            <video
-              className=" w-96  "
-              width="570"
-              height="699"
-              controls={false}
-              autoPlay
-            >
-              <source src="/mosh-new.mp4" type="video/mp4" />
-              Error Message
-            </video>
-            <div className="w-96 flex flex-col items-center gap-10 px-10  ">
-              <h1 className="text-4xl  font-bold  ">
+        <div className="flex justify-center items-centers  my-32 ">
+          <div className="w-[60%] grid md:grid-rows-1 md:grid-cols-2 grid-rows-2 grid-cols-1  place-items-center place-content-center ">
+            <div className="w-96 flex flex-col items-center md:gap-10 px-10  ">
+              <h1 className="md:text-4xl text-3xl  font-bold  ">
                 My first project with HTML & CSS
               </h1>
               <p>
@@ -141,6 +131,16 @@ export default function Home() {
               </p>
               <div>hello</div>
             </div>
+            <video
+              className=" w-96  "
+              width="570"
+              height="699"
+              controls={false}
+              autoPlay
+            >
+              <source src="/mosh-new.mp4" type="video/mp4" />
+              Error Message
+            </video>
           </div>
         </div>
       </section>
