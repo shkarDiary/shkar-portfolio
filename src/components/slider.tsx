@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -22,8 +22,10 @@ const works = [
 ];
 export default function Slider() {
   const swiper = useRef<any>(null);
-  const width = window.innerWidth;
-
+  const [width, setWidth] = useState<number>(768);
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
   const isMobile = width <= 768;
   return (
     <div className=" ">
