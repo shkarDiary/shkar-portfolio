@@ -163,7 +163,7 @@ export default function Home() {
           <h3 className="text-3xl text-secondary-200 font-bold ">Project</h3>
           <h1 className="text-5xl font-bold ">My latest graphics</h1>
         </div>
-        {/* <Slider /> */}
+        <Slider />
       </section>
       <footer className=" h-44 w-screen bg-gray-600 text-stone-100 flex justify-around items-center mt-4 ">
         <div className="space-y-4">
