@@ -1,14 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
-import {
-  Swiper,
-  SwiperProps,
-  SwiperRef,
-  SwiperSlide,
-  SwiperSlideProps,
-  useSwiper,
-} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -16,7 +9,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import Prev from "@mui/icons-material/ArrowBack";
 import Next from "@mui/icons-material/ArrowForward";
-import { SwiperEvents } from "swiper/types";
+
 const works = [
   { name: "kp1", url: "/works/kp1.jpg" },
   { name: "kp2", url: "/works/kp2.jpg" },
@@ -29,6 +22,9 @@ const works = [
 ];
 export default function Slider() {
   const swiper = useRef<any>(null);
+  const width = window.innerWidth;
+
+  const isMobile = width <= 768;
   return (
     <div className=" ">
       <Swiper
@@ -39,6 +35,7 @@ export default function Slider() {
         pagination={{
           clickable: true,
         }}
+        navigation={isMobile ? true : false}
         modules={[Pagination, Navigation]}
         style={{ height: "100%", width: "100%" }}
       >
@@ -60,7 +57,7 @@ export default function Slider() {
             />
           </SwiperSlide>
         ))}
-        <div className=" ml-20 mt-8 space-x-10 ">
+        <div className=" ml-20 mt-8 space-x-10 hidden md:block ">
           <button
             title="prev"
             onClick={() => {
