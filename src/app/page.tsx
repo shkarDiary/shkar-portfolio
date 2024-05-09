@@ -174,7 +174,7 @@ export default function Home() {
         </div>
         <div className=" space-y-4 ">
           <h2 className=" md:text-2xl font-bold  ">Follow</h2>
-          <div className="flex flex-col md:text-xl md:space-x-4 space-y-1 ">
+          <div className="flex md:flex-row flex-col md:text-xl md:space-x-4 space-y-1 ">
             <Link
               href={
                 "https://www.instagram.com/d4ro_diary?igsh=ZG1qYTc3a2M5dmwx"
