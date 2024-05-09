@@ -9,7 +9,7 @@ import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import Prev from "@mui/icons-material/ArrowBack";
 import Next from "@mui/icons-material/ArrowForward";
-
+import { Skeleton } from "@mui/material";
 const works = [
   { name: "kp1", url: "/works/kp1.jpg" },
   { name: "kp2", url: "/works/kp2.jpg" },
@@ -50,13 +50,17 @@ export default function Slider() {
             }}
             key={work.name}
           >
-            <Image
-              className=" block w-96 h-96 object-cover "
-              height={300}
-              width={300}
-              alt={`this is ${work.name} image`}
-              src={work.url}
-            />
+            {work ? (
+              <Image
+                className=" block w-96 h-96 object-cover "
+                height={300}
+                width={300}
+                alt={`this is ${work.name} image`}
+                src={work.url}
+              />
+            ) : (
+              <Skeleton variant="rectangular" width={384} height={384} />
+            )}
           </SwiperSlide>
         ))}
         <div className=" ml-20 mt-8 space-x-10 hidden md:block ">
