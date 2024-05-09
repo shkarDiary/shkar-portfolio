@@ -121,8 +121,8 @@ export default function Home() {
               className="w-14 h-10 md:w-32 md:h-auto object-contain"
               key={skills.name}
               src={skills.img}
-              width={skills.w}
-              height={skills.h}
+              width={56}
+              height={40}
               alt={`this is ${skills.name} image`}
             />
           ))}
