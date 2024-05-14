@@ -2,8 +2,18 @@ import LinkButton from "@/components/link-button";
 import Slider from "@/components/slider";
 import Image from "next/image";
 import Link from "next/link";
+import prisma from "../../lib/prisma";
 
-export default function Home() {
+const getPosts = async () => {
+  const feed = await prisma.post.findMany({
+    select: { name: true, url: true },
+  });
+  return {
+    feed,
+  };
+};
+export default async function Home() {
+  const posts = await getPosts();
   const skills = [
     {
       name: "react",
@@ -53,6 +63,7 @@ export default function Home() {
       link: "mailto:shkardeary4@gmail.com",
     },
   ];
+
   return (
     <main className=" h-full ">
       <span className=" w-[30%]  h-[38.8rem] md:h-full  bg-primary-200 absolute right-0 top-0 -z-20" />
@@ -163,7 +174,7 @@ export default function Home() {
           <h3 className="text-3xl text-secondary-200 font-bold ">Project</h3>
           <h1 className="text-5xl font-bold ">My latest graphics</h1>
         </div>
-        <Slider />
+        <Slider work={posts.feed} />
       </section>
       <footer className=" h-44 w-screen bg-gray-600 text-stone-100 flex justify-around items-center mt-4 ">
         <div className="space-y-4">
