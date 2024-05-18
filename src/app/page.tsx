@@ -67,7 +67,7 @@ export default async function Home() {
   return (
     <main className=" h-full ">
       <span className=" w-[30%]  h-[38.8rem] md:h-full  bg-primary-200 absolute right-0 top-0 -z-20" />
-      <section className="md:w-[70%] grid md:grid-rows-1 md:grid-cols-2 auto-rows-auto grid-cols-1 w-screen md:h-[calc(100vh-12rem)] md:mt-16  ">
+      <section className="md:w-[70%] grid md:grid-rows-1 md:grid-cols-2 auto-rows-auto grid-cols-1 w-screen md:h-screen  ">
         <div className=" h-10 md:h-auto flex md:justify-end justify-center  md:gap-3 md:flex-col md:px-28 md:m-0 mt-12 row-end-2 row-start-2 md:row-start-auto md:row-end-auto ">
           {iconName.map((icon) => (
             <Link

@@ -22,7 +22,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${ubntu.className}`}>
         <Lines />
-        <Nav />
         <NextSSRPlugin
           /**
            * The `extractRouterConfig` will extract **only** the route configs
