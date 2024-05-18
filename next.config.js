@@ -6,6 +6,7 @@ const nextConfig = {
       },
     ],
   },
+  skipMiddlewareUrlNormalize: true,
 };
 
 module.exports = nextConfig;
