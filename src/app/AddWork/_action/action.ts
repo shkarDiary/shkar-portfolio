@@ -12,9 +12,11 @@ const postsWork = async ({
   url,
 }: PostParams): Promise<{ succsess: boolean; msg: string }> => {
   try {
-    const res = await prisma.post.create({
-      data: { url, name },
-    });
+    const res = await prisma.post.create(
+      {
+        data: { url, name },
+      }
+    );
     return { succsess: true, msg: "post created" };
   } catch (error) {
     return { succsess: false, msg: JSON.stringify(error) };

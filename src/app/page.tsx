@@ -10,6 +10,7 @@ const getPosts = async () => {
   });
   return {
     feed,
+    revalidate: 10,
   };
 };
 export default async function Home() {
