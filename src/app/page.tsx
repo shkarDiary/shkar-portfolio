@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import prisma from "../../lib/prisma";
 
-const getPosts = async () => {
+export const getServerSideProps = async () => {
   const feed = await prisma.post.findMany({
     select: { name: true, url: true },
   });
@@ -14,7 +14,7 @@ const getPosts = async () => {
   };
 };
 export default async function Home() {
-  const posts = await getPosts();
+  const posts = await getServerSideProps();
   const skills = [
     {
       name: "react",
