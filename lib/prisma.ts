@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 
 let prisma: PrismaClient;
-
+export const dynamic = "force-dynamic";
 if (process.env.NODE_ENV === "production") {
   prisma = new PrismaClient();
 } else {
