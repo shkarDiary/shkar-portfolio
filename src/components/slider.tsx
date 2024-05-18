@@ -10,7 +10,6 @@ import "swiper/css";
 import Prev from "@mui/icons-material/ArrowBack";
 import Next from "@mui/icons-material/ArrowForward";
 import { NextPage } from "next/types";
-
 type WorkItem = {
   name: string;
   url: string;

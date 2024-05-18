@@ -1,8 +1,6 @@
 "use server";
 
 import prisma from "@/../lib/prisma";
-export const dynamic = "force-dynamic";
-export const revalidate = 1;
 type PostParams = {
   name: string;
   url: string;
