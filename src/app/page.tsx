@@ -5,7 +5,7 @@ import Link from "next/link";
 import prisma from "../../lib/prisma";
 import { revalidatePath } from "next/cache";
 
-export const getPosts = async () => {
+const getPosts = async () => {
   "use serverv";
   const feed = await prisma.post.findMany({
     select: { name: true, url: true },
