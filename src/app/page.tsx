@@ -3,8 +3,10 @@ import Slider from "@/components/slider";
 import Image from "next/image";
 import Link from "next/link";
 import prisma from "../../lib/prisma";
+import { revalidatePath } from "next/cache";
 
-export const getServerSideProps = async () => {
+const getPosts = async () => {
+  "use serverv";
   const feed = await prisma.post.findMany({
     select: { name: true, url: true },
   });
@@ -12,9 +14,11 @@ export const getServerSideProps = async () => {
     feed,
     revalidate: 10,
   };
+  revalidatePath("/");
 };
+
 export default async function Home() {
-  const posts = await getServerSideProps();
+  const posts = await getPosts();
   const skills = [
     {
       name: "react",
