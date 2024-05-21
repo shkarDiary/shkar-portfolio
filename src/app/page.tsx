@@ -5,16 +5,16 @@ import Link from "next/link";
 import prisma from "../../lib/prisma";
 import { revalidatePath } from "next/cache";
 
-const getPosts = async () => {
+export const getPosts = async () => {
   "use serverv";
   const feed = await prisma.post.findMany({
     select: { name: true, url: true },
   });
+  revalidatePath("/");
   return {
     feed,
     revalidate: 10,
   };
-  revalidatePath("/");
 };
 
 export default async function Home() {
